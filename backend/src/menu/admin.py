@@ -7,7 +7,7 @@ from . import models
 class productsAdmin(admin.ModelAdmin):
 	list_display = ['pk', 'name', 'desc', 'price', 'photo']
 	list_display_links = ('name',)
-	list_editable = ['desc', 'price']
+	list_editable = ['price']
 	search_fields = ('name',)
 
 class clientsAdmin(admin.ModelAdmin):

@@ -4,8 +4,8 @@ from django.db import models
 
 class Client(models.Model):
 	name = models.CharField(verbose_name = 'Имя', max_length = 50)
-	tel = models.CharField(verbose_name = 'Телефон', max_length = 15)
-	email = models.EmailField(verbose_name = 'Эл. почта', blank=True, max_length = 50)
+	tel = models.CharField(verbose_name = 'Телефон', max_length = 15, unique=True)
+	email = models.EmailField(verbose_name = 'Эл. почта', blank=True, max_length = 50, unique=True)
 
 
 	def __str__(self):
