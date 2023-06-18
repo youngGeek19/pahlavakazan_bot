@@ -1,18 +1,19 @@
 from rest_framework import serializers
-from .models import Product, Order, Client
+from .models import Product, Client, Application
 
 
 class ProductSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Product
-		fields = ('name', 'desc', 'price',)
+		fields = '__all__'
 
-class OrderSerializer(serializers.ModelSerializer):
-	class Meta:
-		model = Order
-		fields = ('client', 'product', 'date', 'is_active')
 
 class ClientSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Client
-		fields = ('name', 'tel', 'email')
+		fields = '__all__'
+
+class ApplicationSerializer(serializers.ModelSerializer):	
+	class Meta:
+		model = Application
+		fields = ['is_active','id', 'client_name', 'client_tel', 'client_id', 'product_name', 'price', 'total_price', 'total_count', 'date']
