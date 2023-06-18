@@ -1,0 +1,12 @@
+f = open('26_.txt', 'r')
+s = [i.split() for i in f]
+n = int(s[0][0])
+bd = int(s[0][1])
+allitems = []
+for item in s[1:]:
+	cnt = int(item[1])
+	sale = 1 - (int(item[0]) % 100)
+	if 'C' in item[-1]:	
+		allitems.append(cnt * sale)
+	else:
+		allitems.append(cnt)
